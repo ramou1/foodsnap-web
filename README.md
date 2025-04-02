@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FoodSnap Mobile
 
-## Getting Started
+Este é o repositório do projeto web FoodSnap, desenvolvido com React v19.0.0 e Next.js v15.2.4. O FoodSnap é uma aplicação que permite aos usuários explorar e compartilhar experiências gastronômicas.
 
-First, run the development server:
+## Estrutura do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **`app/`**: Contém as telas do aplicativo.
+  - **`page.tsx`**: Ponto de entrada que redireciona para a tela de login.
+  - **`login/`**:
+    - **`page.tsx`**: Tela de login com formulário de autenticação.
+  - **`feed.tsx`**:
+    - **`page.tsx`**: Tela principal exibindo o feed de postagens.
+  - **`profile.tsx`**:
+    - **`page.tsx`**: Tela de perfil do usuário.
+  - **`settings.tsx`**:
+    - **`page.tsx`**: Tela de configurações do aplicativo.
+  - **`trend.tsx`**:
+    - **`page.tsx`**: Tela exibindo as tendências atuais.
+- **`components/`**: Contém os componentes reutilizáveis do projeto.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependências Principais
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **`next`**: Framework React para desenvolvimento de aplicações web modernas, facilitando a criação de páginas e rotas.
+- **`lucide-react`**: Biblioteca de ícones de código aberto para aplicações React, oferecendo uma coleção consistente e personalizável de ícones SVG.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como Executar o Projeto
 
-## Learn More
+1. **Instale as dependências**: Execute `npm install` para instalar todas as dependências necessárias.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Inicie o servidor de desenvolvimento**: Utilize `npm run dev` para iniciar o servidor.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura de Navegação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O aplicativo utiliza o sistema de roteamento do Next.js para gerenciar a navegação. A estrutura de navegação é composta por uma tela de login inicial e, após a autenticação, o usuário é direcionado para a navegação por abas que inclui as telas Home, Profile, Settings e Trend.
