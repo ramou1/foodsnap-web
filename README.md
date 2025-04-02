@@ -1,4 +1,4 @@
-# FoodSnap Mobile
+# FoodSnap Web
 
 Este é o repositório do projeto web FoodSnap, desenvolvido com React v19.0.0 e Next.js v15.2.4. O FoodSnap é uma aplicação que permite aos usuários explorar e compartilhar experiências gastronômicas.
 
