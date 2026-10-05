@@ -1,34 +1,40 @@
 # FoodSnap Web
 
-Este é o repositório do projeto web FoodSnap, desenvolvido com React v19.0.0 e Next.js v15.2.4. O FoodSnap é uma aplicação que permite aos usuários explorar e compartilhar experiências gastronômicas.
+Versão web do FoodSnap, feita com React 19 e Next.js 15. O app permite explorar fotos de comida, seguir tendências, conversar e publicar pratos.
 
 ## Estrutura do Projeto
 
-- **`app/`**: Contém as telas do aplicativo.
-  - **`page.tsx`**: Ponto de entrada que redireciona para a tela de login.
-  - **`login/`**:
-    - **`page.tsx`**: Tela de login com formulário de autenticação.
-  - **`feed.tsx`**:
-    - **`page.tsx`**: Tela principal exibindo o feed de postagens.
-  - **`profile.tsx`**:
-    - **`page.tsx`**: Tela de perfil do usuário.
-  - **`settings.tsx`**:
-    - **`page.tsx`**: Tela de configurações do aplicativo.
-  - **`trend.tsx`**:
-    - **`page.tsx`**: Tela exibindo as tendências atuais.
-- **`components/`**: Contém os componentes reutilizáveis do projeto.
+- **`src/app/`**: rotas da aplicação.
+  - **`page.tsx`**: redireciona para o login.
+  - **`login/`**: tela de login.
+  - **`register/`**: cadastro em etapas (avatar, nome, preferências e senha).
+  - **`(main)/`**: área autenticada, com navegação inferior.
+    - **`feed/`**: feed em colunas, com abas "for you" e "following" e busca.
+    - **`trend/`**: tendências gastronômicas.
+    - **`chat/`**: lista de conversas.
+    - **`profile/`**: perfil do usuário logado.
+  - **`chat/[id]/`**: conversa.
+  - **`posts/[id]/`**: detalhe da publicação, com curtidas e comentários.
+  - **`posts/create/`**: nova publicação.
+  - **`users/[id]/`**: perfil de outro usuário.
+  - **`restaurants/[id]/`**: perfil de restaurante.
+  - **`settings/`**: edição de perfil e logout.
+- **`src/components/`**: navegação, busca, grade de posts e perfil.
+- **`src/data/`**: dados de exemplo usados pelas telas.
+- **`public/`**: fotos, avatares e imagens padrão.
 
 ## Dependências Principais
 
-- **`next`**: Framework React para desenvolvimento de aplicações web modernas, facilitando a criação de páginas e rotas.
-- **`lucide-react`**: Biblioteca de ícones de código aberto para aplicações React, oferecendo uma coleção consistente e personalizável de ícones SVG.
+- **`next`**: framework React, com rotas e renderização.
+- **`lucide-react`**: ícones SVG.
+- **`tailwindcss`**: estilos.
 
-## Como Executar o Projeto
+## Como Executar
 
-1. **Instale as dependências**: Execute `npm install` para instalar todas as dependências necessárias.
+1. Instale as dependências com `npm install`.
+2. Inicie o servidor com `npm run dev`.
+3. Abra `http://localhost:3000`. O login e o cadastro seguem para o feed sem um backend.
 
-2. **Inicie o servidor de desenvolvimento**: Utilize `npm run dev` para iniciar o servidor.
+## Navegação
 
-## Estrutura de Navegação
-
-O aplicativo utiliza o sistema de roteamento do Next.js para gerenciar a navegação. A estrutura de navegação é composta por uma tela de login inicial e, após a autenticação, o usuário é direcionado para a navegação por abas que inclui as telas Home, Profile, Settings e Trend.
+Depois do login, a barra inferior leva ao feed, às trends, à nova publicação, ao chat e ao perfil. A busca do feed abre locais, restaurantes e usuários.

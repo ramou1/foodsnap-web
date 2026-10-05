@@ -1,0 +1,116 @@
+import type { Restaurant } from "@/types/restaurant";
+
+export const RESTAURANTS: Restaurant[] = [
+  {
+    id: "rest1",
+    name: "Delicious Bites",
+    username: "delicious_bites",
+    image: "/images/restaurant1.jpg",
+    avatar: "/images/restaurant1-avatar.png",
+    bio: "Serving the best comfort food in town since 2010",
+    followers: 3254,
+    following: 125,
+    posts: 432,
+    postsList: [
+      {
+        id: "rest1-p1",
+        image: "/images/food01.jpg",
+        caption: "Our famous burger!",
+        likes: 324,
+        comments: 43,
+        timestamp: "2025-04-10T12:00:00",
+        user: {
+          id: "rest1",
+          username: "delicious_bites",
+          avatar: "/images/restaurant1-avatar.png",
+        },
+      },
+      {
+        id: "rest1-p2",
+        image: "/images/food02.jpg",
+        caption: "New dessert menu!",
+        likes: 215,
+        comments: 31,
+        timestamp: "2025-04-09T12:00:00",
+        user: {
+          id: "rest1",
+          username: "delicious_bites",
+          avatar: "/images/restaurant1-avatar.png",
+        },
+      },
+      {
+        id: "rest1-p3",
+        image: "/images/food03.jpg",
+        caption: "Weekend special pasta",
+        likes: 430,
+        comments: 52,
+        timestamp: "2025-04-08T12:00:00",
+        user: {
+          id: "rest1",
+          username: "delicious_bites",
+          avatar: "/images/restaurant1-avatar.png",
+        },
+      },
+    ],
+    highlights: [
+      { id: "h1", title: "Menu", image: "/images/food02.jpg" },
+      { id: "h2", title: "Specials", image: "/images/food02.jpg" },
+    ],
+  },
+  {
+    id: "rest2",
+    name: "Sushi Paradise",
+    username: "sushi_paradise",
+    image: "/images/restaurant2.jpg",
+    avatar: "/images/restaurant2-avatar.png",
+    bio: "Authentic Japanese cuisine with a modern twist",
+    followers: 5128,
+    following: 87,
+    posts: 752,
+    postsList: [
+      {
+        id: "rest2-p1",
+        image: "/images/food04.jpg",
+        caption: "Fresh salmon nigiri",
+        likes: 512,
+        comments: 63,
+        timestamp: "2025-04-10T08:00:00",
+        user: {
+          id: "rest2",
+          username: "sushi_paradise",
+          avatar: "/images/restaurant2-avatar.png",
+        },
+      },
+      {
+        id: "rest2-p2",
+        image: "/images/food04.jpg",
+        caption: "Dragon roll special",
+        likes: 487,
+        comments: 52,
+        timestamp: "2025-04-09T08:00:00",
+        user: {
+          id: "rest2",
+          username: "sushi_paradise",
+          avatar: "/images/restaurant2-avatar.png",
+        },
+      },
+      {
+        id: "rest2-p3",
+        image: "/images/food04.jpg",
+        caption: "Chef's selection platter",
+        likes: 643,
+        comments: 84,
+        timestamp: "2025-04-07T08:00:00",
+        user: {
+          id: "rest2",
+          username: "sushi_paradise",
+          avatar: "/images/restaurant2-avatar.png",
+        },
+      },
+    ],
+    highlights: [
+      { id: "h1", title: "Chef", image: "/images/food12.jpg" },
+      { id: "h2", title: "Omakase", image: "/images/food16.jpg" },
+    ],
+  },
+];

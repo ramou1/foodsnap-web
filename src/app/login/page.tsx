@@ -1,107 +1,71 @@
 "use client";
 
-import { EyeOff, Eye } from "lucide-react";
+import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    rememberMe: false,
-  });
-
-  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push(`/feed`);
-  };
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    router.push("/feed");
+  }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md rounded-lg border-2 border-gray-200 p-8">
-        <div className="mb-2 flex justify-center">
-          {/* <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={180}
-            height={116}
-            priority
-          /> */}
-        </div>
+    <div className="flex min-h-screen items-center justify-center bg-white px-6 text-gray-900">
+      <div className="w-full max-w-md">
+        <h1 className="mb-8 text-center text-3xl font-bold text-blue-600">Bem-vindo</h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              E-mail
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              className="mt-1 block w-full rounded-md border-2 border-gray-200 px-3 py-2 focus:border-red-500 focus:outline-none text-gray-900"
-              placeholder="seu@email.com"
-              readOnly
-              required
-            />
-          </div>
+          <input
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="E-mail"
+            className="h-12 w-full rounded-lg border border-gray-300 bg-gray-50 px-4 outline-none focus:border-blue-500"
+          />
 
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Senha"
+              className="h-12 w-full rounded-lg border border-gray-300 bg-gray-50 px-4 pr-12 outline-none focus:border-blue-500"
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center pr-3"
+              onClick={() => setShowPassword((current) => !current)}
+              aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
             >
-              Senha
-            </label>
-            <div className="relative mt-1">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                value={formData.password}
-                className="block w-full rounded-md border-2 border-gray-200 px-3 py-2 focus:border-red-500 focus:outline-none text-gray-900"
-                placeholder="••••••"
-                readOnly
-                required
-              />
-              <button
-                type="button"
-                className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? (
-                  <EyeOff className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <Eye className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-            </div>
+              {showPassword ? (
+                <EyeOff className="h-5 w-5 text-gray-500" />
+              ) : (
+                <Eye className="h-5 w-5 text-gray-500" />
+              )}
+            </button>
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-md bg-red-600 mt-4 py-2 px-4 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            className="mt-4 h-12 w-full rounded-lg bg-blue-500 text-lg font-bold text-white hover:bg-blue-600"
           >
             Entrar
           </button>
         </form>
 
-        <div className="mt-4 text-center text-sm">
-          <span className="text-gray-600">Não tem uma conta? </span>
-          <Link
-            href="/register"
-            className="font-medium text-red-600 hover:text-red-400"
-          >
+        <p className="mt-6 text-center text-base text-gray-600">
+          Não tem uma conta?{" "}
+          <Link href="/register" className="font-bold text-blue-500">
             Cadastre-se
           </Link>
-        </div>
+        </p>
       </div>
     </div>
   );
