@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { Heart, LayoutGrid, List, Search, Utensils } from "lucide-react";
 import { POSTS } from "@/data/posts";
@@ -18,6 +18,27 @@ export default function FeedPage() {
   const [activeTab, setActiveTab] = useState<"for-you" | "following">("for-you");
   const [searchOpen, setSearchOpen] = useState(false);
 
+  useEffect(() => {
+    function columnsForWidth(width: number) {
+      if (width >= 1280) return 5;
+      if (width >= 768) return 4;
+      return 3;
+    }
+
+    let breakpoint = columnsForWidth(window.innerWidth);
+    setColumns(breakpoint);
+
+    function onResize() {
+      const next = columnsForWidth(window.innerWidth);
+      if (next === breakpoint) return;
+      breakpoint = next;
+      setColumns(next);
+    }
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const distributed = useMemo(() => {
     const visible =
       activeTab === "following" ? POSTS.filter((post) => post.reposted) : POSTS;
@@ -29,11 +50,15 @@ export default function FeedPage() {
   }, [activeTab, columns]);
 
   function cycleColumns() {
-    setColumns((current) => (current === 1 ? 2 : current === 2 ? 3 : 1));
+    const options = window.innerWidth >= 768 ? [2, 3, 4, 5] : [1, 2, 3];
+    setColumns((current) => {
+      const index = options.indexOf(current);
+      return options[(index + 1) % options.length];
+    });
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-white md:rounded-2xl md:shadow-sm">
       <div className="px-4 pb-2 pt-3">
         <div className="mb-2 flex items-center justify-between">
           <button

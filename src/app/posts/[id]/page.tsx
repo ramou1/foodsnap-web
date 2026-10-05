@@ -48,7 +48,8 @@ export default function PostDetailPage() {
 
   return (
     <PageFrame>
-      <div className="relative">
+      <div className="md:grid md:min-h-[calc(100vh-4rem)] md:grid-cols-2">
+      <div className="relative md:sticky md:top-8 md:h-[calc(100vh-4rem)]">
         <div className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between px-4 pb-2 pt-4">
           <button
             type="button"
@@ -71,11 +72,11 @@ export default function PostDetailPage() {
         <img
           src={post.image}
           alt={post.caption || "Publicação"}
-          className="aspect-[10/16] w-full object-cover"
+          className="aspect-[10/16] w-full object-cover md:aspect-auto md:h-full"
         />
       </div>
 
-      <div className="p-4">
+      <div className="p-4 md:overflow-y-auto md:p-8">
         <div className="mb-3 mt-2 flex items-center">
           <img
             src={post.user?.avatar || DEFAULT_AVATAR}
@@ -120,10 +121,9 @@ export default function PostDetailPage() {
             <span className="ml-2">compartilhar</span>
           </button>
         </div>
-      </div>
 
       {showComments && (
-        <div className="px-4 pb-6">
+        <div className="pb-6">
           <h2 className="mb-3 text-lg font-medium">Comentários</h2>
           {post.comments && post.comments > 0 ? (
             <div className="space-y-4">
@@ -172,6 +172,8 @@ export default function PostDetailPage() {
           </form>
         </div>
       )}
+      </div>
+      </div>
     </PageFrame>
   );
 }

@@ -48,7 +48,7 @@ export default function ChatDetailPage() {
   }
 
   return (
-    <PageFrame className="flex h-screen flex-col bg-gray-100">
+    <PageFrame className="flex h-dvh flex-col bg-gray-100 md:h-[calc(100vh-4rem)]">
       <div className="flex items-center border-b border-gray-200 bg-white px-4 py-3">
         <button type="button" onClick={() => router.back()} className="mr-4" aria-label="Voltar">
           <ArrowLeft size={24} />

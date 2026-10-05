@@ -34,7 +34,7 @@ export default function SettingsPage() {
         <h1 className="text-xl font-bold">edit profile</h1>
       </div>
 
-      <form onSubmit={handleSave}>
+      <form onSubmit={handleSave} className="md:mx-auto md:max-w-xl md:py-4">
         <div className="mb-4 flex items-center justify-center bg-white py-8">
           <div className="relative">
             <img

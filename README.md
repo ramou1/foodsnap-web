@@ -37,4 +37,4 @@ Versão web do FoodSnap, feita com React 19 e Next.js 15. O app permite explorar
 
 ## Navegação
 
-Depois do login, a barra inferior leva ao feed, às trends, à nova publicação, ao chat e ao perfil. A busca do feed abre locais, restaurantes e usuários.
+No celular, a barra inferior leva ao feed, às trends, à nova publicação, ao chat e ao perfil. No navegador largo, essa navegação fica em uma barra lateral e o conteúdo ocupa a largura da tela. A busca do feed abre locais, restaurantes e usuários.

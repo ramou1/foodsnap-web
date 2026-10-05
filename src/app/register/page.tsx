@@ -65,7 +65,7 @@ export default function RegisterPage() {
 
   return (
     <PageFrame>
-      <div className="flex min-h-screen flex-col px-6 py-6">
+      <div className="flex min-h-screen flex-col px-6 py-6 md:mx-auto md:max-w-xl">
         <div className="mb-4 flex items-center justify-between">
           <button type="button" onClick={prevStep} aria-label="Voltar" className="p-2">
             <ArrowLeft size={24} />

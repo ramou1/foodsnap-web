@@ -45,7 +45,8 @@ export default function CreatePostPage() {
         <h1 className="text-lg font-semibold">new post</h1>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 md:grid md:grid-cols-2 md:gap-10 md:p-8">
+        <div>
         <p className="mb-2 text-lg font-medium text-gray-800">image</p>
 
         {image ? (
@@ -100,7 +101,9 @@ export default function CreatePostPage() {
             onChange={(event) => readFile(event.target.files?.[0])}
           />
         </div>
+        </div>
 
+        <div>
         <label className="mb-2 block text-lg font-medium text-gray-800">description</label>
         <input
           value={caption}
@@ -145,6 +148,7 @@ export default function CreatePostPage() {
             </>
           )}
         </button>
+        </div>
       </div>
     </PageFrame>
   );

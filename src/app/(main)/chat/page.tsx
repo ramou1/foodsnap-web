@@ -4,7 +4,7 @@ import { CHAT_CONVERSATIONS } from "@/data/chat";
 
 export default function ChatPage() {
   return (
-    <div className="min-h-full bg-gray-100">
+    <div className="min-h-full bg-gray-100 md:mx-auto md:max-w-3xl md:overflow-hidden md:rounded-2xl md:border md:border-gray-200 md:bg-white">
       <div className="flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3">
         <h1 className="text-2xl font-bold">Mensagens</h1>
         <SquarePen size={24} />

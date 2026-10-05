@@ -17,16 +17,16 @@ export default function ProfilePage() {
       highlights={user.highlights}
       postsList={user.postsList}
       actions={
-        <div className="mb-4 mt-4 flex justify-between gap-2">
+        <div className="mb-4 mt-4 flex gap-3 md:mb-8 md:mt-6 md:gap-4">
           <Link
             href="/settings"
-            className="w-1/2 rounded-md bg-gray-200 py-2 text-center text-sm font-medium"
+            className="flex-1 rounded-lg bg-gray-200 py-2.5 text-center text-sm font-medium md:py-3 md:text-base"
           >
             edit profile
           </Link>
           <button
             type="button"
-            className="w-1/2 rounded-md bg-violet-200 py-2 text-center text-sm font-medium"
+            className="flex-1 rounded-lg bg-violet-200 py-2.5 text-center text-sm font-medium md:py-3 md:text-base"
           >
             share
           </button>

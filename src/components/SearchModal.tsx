@@ -119,8 +119,8 @@ export function SearchModal({
   const list = searchText.trim() ? results[activeTab] : [];
 
   return (
-    <div className="fixed inset-0 z-40 flex justify-center bg-black/20">
-      <div className="flex h-full w-full max-w-md flex-col bg-white">
+    <div className="fixed inset-0 z-40 flex justify-center bg-black/40 md:items-center md:p-8">
+      <div className="flex h-full w-full flex-col bg-white md:h-[min(720px,90vh)] md:max-w-2xl md:overflow-hidden md:rounded-2xl md:shadow-xl">
         <div className="flex items-center gap-3 border-b border-gray-200 px-4 py-3">
           <button type="button" onClick={onClose} aria-label="Fechar busca">
             <ArrowLeft size={24} />

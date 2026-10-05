@@ -17,9 +17,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white px-6 text-gray-900">
+    <div className="flex min-h-screen bg-white text-gray-900">
+      <aside className="hidden w-1/2 flex-col justify-between bg-[#6e11b0] p-12 text-white lg:flex">
+        <p className="text-3xl font-bold">FoodSnap</p>
+        <div>
+          <h2 className="text-4xl font-bold leading-tight">Fotos de comida, novos sabores.</h2>
+          <p className="mt-4 max-w-md text-lg text-violet-100">
+            Explore pratos, siga tendências e compartilhe o que você comeu.
+          </p>
+        </div>
+        <p className="text-sm text-violet-200">Novos pratos, todos os dias.</p>
+      </aside>
+      <div className="flex flex-1 items-center justify-center px-6">
       <div className="w-full max-w-md">
-        <h1 className="mb-8 text-center text-3xl font-bold text-blue-600">Bem-vindo</h1>
+        <h1 className="mb-8 text-center text-3xl font-bold text-blue-600 lg:text-left">Bem-vindo</h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
@@ -66,6 +77,7 @@ export default function LoginPage() {
             Cadastre-se
           </Link>
         </p>
+      </div>
       </div>
     </div>
   );
